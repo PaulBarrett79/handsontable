@@ -469,20 +469,7 @@ Handsontable.Core = function Core(rootElement, userSettings) {
                 }
               }
               if (value !== null && typeof value === 'object') {
-                if (orgValue === null || typeof orgValue !== 'object') {
-                  pushData = false;
-
-                } else {
-                  let orgValueSchema = duckSchema(orgValue[0] || orgValue);
-                  let valueSchema = duckSchema(value[0] || value);
-
-                  /* jshint -W073 */
-                  if (isObjectEquals(orgValueSchema, valueSchema)) {
-                    value = deepClone(value);
-                  } else {
-                    pushData = false;
-                  }
-                }
+                value = Handsontable.helper.deepClone(value);
 
               } else if (orgValue !== null && typeof orgValue === 'object') {
                 pushData = false;

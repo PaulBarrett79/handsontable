@@ -7,13 +7,13 @@
  * Licensed under the MIT license.
  * http://handsontable.com/
  *
- * Date: Tue Nov 03 2015 14:30:34 GMT+0100 (CET)
+ * Date: Mon Nov 09 2015 11:57:45 GMT+0000 (GMT)
  */
 /*jslint white: true, browser: true, plusplus: true, indent: 4, maxerr: 50 */
 
 window.Handsontable = {
   version: '0.20.0',
-  buildDate: 'Tue Nov 03 2015 14:30:34 GMT+0100 (CET)',
+  buildDate: 'Mon Nov 09 2015 11:57:45 GMT+0000 (GMT)',
 };
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.Handsontable = f()}})(function(){var define,module,exports;return (function init(modules, cache, entry) {
   (function outer (modules, cache, entry) {
@@ -4311,17 +4311,7 @@ Handsontable.Core = function Core(rootElement, userSettings) {
                 }
               }
               if (value !== null && typeof value === 'object') {
-                if (orgValue === null || typeof orgValue !== 'object') {
-                  pushData = false;
-                } else {
-                  var orgValueSchema = duckSchema(orgValue[0] || orgValue);
-                  var valueSchema = duckSchema(value[0] || value);
-                  if (isObjectEquals(orgValueSchema, valueSchema)) {
-                    value = deepClone(value);
-                  } else {
-                    pushData = false;
-                  }
-                }
+                value = Handsontable.helper.deepClone(value);
               } else if (orgValue !== null && typeof orgValue === 'object') {
                 pushData = false;
               }
@@ -20656,5 +20646,5 @@ if (typeof exports !== "undefined") {
 }).call(window);
 
 //# 
-},{}]},{},[23,59,61,60,62,83,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,84,85,86,87,100,101,102,90,91,92,93,94,95,31,35,32,33,40,34,36,37,38,39])("numeral")
+},{}]},{},[23,59,60,61,62,83,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,84,85,86,87,100,101,102,90,91,92,93,94,95,31,35,32,33,40,34,36,37,38,39])("numeral")
 });
